@@ -2,9 +2,8 @@
 import React, { useState } from "react";
 import Header from "../_components/Header";
 import Container from "../helper/Container";
-import { PiImageSquare } from "react-icons/pi";
 
-import CategoriesComp from "./_components/categoriesComp";
+import CategoriesComp from "./_components/CategoriesComp";
 import Type from "./_components/Type";
 import PlaceLocation from "./_components/PlaceLocation";
 import Essentials from "./_components/Essentials";
