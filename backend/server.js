@@ -34,6 +34,10 @@ app.use("/listing", listinRouter);
 app.use("/bookings", bookingRouter);
 app.use("/users", userRouter)
 
+app.use("/", (req, res) => {
+  res.send("Back end working")
+})
+
 
 
 app.listen(PORT, () => {
