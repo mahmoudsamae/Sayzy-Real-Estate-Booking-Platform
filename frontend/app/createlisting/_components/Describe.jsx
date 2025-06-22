@@ -8,7 +8,7 @@ const Describe = ({ handleSelectedAmenities, amenities }) => {
         Describe about the features of your location?
       </h4>
       <ul className="flex items-center flex-wrap gap-3 mb-10">
-        {facilities.map((card) => (
+        {facilities?.map((card) => (
           <li
             key={card.name}
             onClick={() => handleSelectedAmenities(card.name)}

@@ -13,7 +13,7 @@ const page = () => {
   const userId = useSelector((state) => state?.user?._id);
   const tripList = useSelector((state) => state?.user?.tripList);
   const dispatch = useDispatch();
-  const firstListingId = tripList.length > 0 ? tripList[0].listingId._id : null;
+  const firstListingId = tripList?.length > 0 ? tripList[0].listingId._id : null;
 
 
   const getListTrips = async () => {
@@ -45,7 +45,7 @@ const page = () => {
         <section className="mt-4">
           <h3 className="text-[20px] font-bold mb-2">Your Trip List</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {tripList.map(
+            {tripList?.map(
               ({
                 _id,
                 listingId,

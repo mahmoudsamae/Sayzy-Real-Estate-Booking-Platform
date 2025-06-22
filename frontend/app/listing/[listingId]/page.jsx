@@ -159,7 +159,7 @@ const page = () => {
               <ul className="flex items-center flex-wrap gap-3">
                 {Array.isArray(listing?.amenities) &&
                   listing?.amenities.length > 0 &&
-                  listing?.amenities[0].split(",").map((item, i) => {
+                  listing?.amenities[0]?.split(",").map((item, i) => {
                     const matchedFacility = facilities.find(
                       (f) => f.name === item.trim()
                     );

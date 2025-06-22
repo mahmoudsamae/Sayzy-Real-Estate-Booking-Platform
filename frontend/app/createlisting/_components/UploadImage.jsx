@@ -76,7 +76,7 @@ const UploadImage = ({ setPhotos, photos }) => {
 
   const handleUploadPhotos = (e) => {
     const newPhotos = Array.from(e.target.files);
-    const filesWithIds = newPhotos.map((file) => ({
+    const filesWithIds = newPhotos?.map((file) => ({
       id: crypto.randomUUID(),
       file,
     }));
@@ -106,7 +106,7 @@ const UploadImage = ({ setPhotos, photos }) => {
         onDragEnd={handleDragEnd}
       >
         <SortableContext
-          items={photos.map((p) => p.id)}
+          items={photos?.map((p) => p.id)}
           strategy={rectSortingStrategy}
         >
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 bg-gray-50 rounded-lg shadow-lg">
@@ -136,7 +136,7 @@ const UploadImage = ({ setPhotos, photos }) => {
             )}
             {photos.length > 0 && (
               <>
-                {photos.map((photoObj) => (
+                {photos?.map((photoObj) => (
                   <MemoizedSortablePhoto  
                     key={photoObj.id}
                     id={photoObj.id}

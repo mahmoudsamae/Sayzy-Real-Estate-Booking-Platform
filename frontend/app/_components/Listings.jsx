@@ -51,7 +51,7 @@ const Listings = () => {
             />
           </div>
           <div className="flex items-center no-scrollbar gap-x-2 overflow-x-auto bg-white rounded-full px-4 py-3">
-            {categories.map((category) => (
+            {categories?.map((category) => (
               <div
                 onClick={() => !loading && setSelectedCategory(category.label)}
                 key={category.label}
@@ -73,7 +73,7 @@ const Listings = () => {
             <Loading />
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {listings.map(
+              {listings?.map(
                 ({
                   _id,
                   creator,

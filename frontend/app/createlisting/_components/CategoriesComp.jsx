@@ -5,7 +5,7 @@ const CategoriesComp = ({ setCategory, category }) => {
   return (
     <div className="overflow-x-auto no-scrollbar px-4 py-3 bg-white rounded-full">
       <div className="flex items-center gap-x-4 min-w-max">
-        {categories.map((item) => (
+        {categories?.map((item) => (
           <div
             key={item.label}
             onClick={() => setCategory(item.label)}

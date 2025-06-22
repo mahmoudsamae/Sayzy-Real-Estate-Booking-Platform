@@ -8,7 +8,7 @@ const Type = ({ setType, type }) => {
         What is the type of your place
       </h4>
       <div className="flexCol gap-3 mb-6">
-        {types.map((item) => (
+        {types?.map((item) => (
           <div
             key={item.name}
             onClick={() => setType(item.name)}
