@@ -68,26 +68,22 @@ const ListingCard = memo(({
       {/* Images */}
       <div className="overflow-hidden relative w-full">
         <div
-          className="flex w-full transition-transform duration-300 ease-in-out"
+          className="flex w-full transition-transform duration-300 ease-in-out rounded-[2rem]"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {listingPhotoPaths?.map((photo, i) => (
             <div
-              className="relative w-full h-[286px] lg:h-[255px] items-center shrink-0"
+              className="relative w-full h-[286px] lg:h-[255px] items-center shrink-0 rounded-[2rem]"
               key={i}
             >
-              <Image
+              <img
                 src={`${process.env.NEXT_PUBLIC_DATABASE_URL}/${photo.replace(
                   "public",
                   ""
                 )}`}
                 alt="listingImg"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 priority
-                className="rounded-[2rem] object-cover"
-                placeholder="blur"
-                blurDataURL="/blur-placeholder.jpg"
+                className="rounded-[2rem] w-full h-full object-cover"
               />
 
               {/* Arrows */}

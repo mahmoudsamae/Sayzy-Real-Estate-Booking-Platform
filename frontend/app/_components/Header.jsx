@@ -46,12 +46,12 @@ const Header = () => {
               className="relative w-9 h-9 flexCenter rounded-full bg-primary overflow-hidden cursor-pointer"
             >
               {user ? (
-                <Image
+                <img
                   src={`${
                     process.env.NEXT_PUBLIC_DATABASE_URL
                   }/${user?.profileImagePath.replace("public", "")}`}
                   alt="profileImage"
-                  fill
+                  className="w-full h-full object-cover"
                 />
               ) : (
                 <FaUserLarge className="text-white" />
