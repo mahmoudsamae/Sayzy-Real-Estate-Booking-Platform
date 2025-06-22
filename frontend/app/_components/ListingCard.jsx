@@ -25,7 +25,6 @@ const ListingCard = memo(({
   startDate,
   endDate,
   totalPrice,
-  firstListingId, // ⬅️ تأكد من تمريره من المكون الأب
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const dispatch = useDispatch();
@@ -85,7 +84,7 @@ const ListingCard = memo(({
                 alt="listingImg"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                priority={listingId === firstListingId}
+                priority
                 className="rounded-[2rem] object-cover"
                 placeholder="blur"
                 blurDataURL="/blur-placeholder.jpg"

@@ -8,13 +8,13 @@ import axiosClient from "../_utilte/axiosClient";
 import { setListings } from "../_redux/state";
 import Loading from "../helper/Loading";
 import ListingCard from "./ListingCard";
+import { toast } from "react-toastify";
 
 const Listings = () => {
   const dispatch = useDispatch();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [loading, setLoading] = useState(false);
   const listings = useSelector((state) => state.listings);
-  const firstListingId = listings.length > 0 ? listings[0]._id : null;
 
 
   // get listings
@@ -29,7 +29,7 @@ const Listings = () => {
       if (response.data.success) {
         dispatch(setListings({ listings: response.data.listings }));
       } else {
-        console.log(response.data.message);
+        toast.error(response.data.message);
       }
     } catch (error) {
       console.log(error);
@@ -102,7 +102,6 @@ const Listings = () => {
                     title={title}
                     description={description}
                     booking={booking}
-                    firstListingId={firstListingId}
                   />
                 )
               )}

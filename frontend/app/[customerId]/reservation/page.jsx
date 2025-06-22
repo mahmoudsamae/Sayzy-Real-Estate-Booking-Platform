@@ -9,6 +9,7 @@ import Loading from "@/app/helper/Loading";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const page = () => {
   const [loading, setLoading] = useState(true);
@@ -16,17 +17,15 @@ const page = () => {
   const reservationList = useSelector((state) => state?.user?.reservationList);
   const dispatch = useDispatch();
 
-  console.log("mmmmmmmmmmm")
   const getReservationList = async () => {
     try {
       const response = await axiosClient.get(`/users/${userId}/reservations`);
 
-      console.log(response.data);
       if (response.data.success) {
         dispatch(setReservationList(response.data.reservations));
         setLoading(false);
       } else {
-        console.log(response.data.message);
+        toast.error(response.data.message);
       }
     } catch (error) {
       console.log(error);

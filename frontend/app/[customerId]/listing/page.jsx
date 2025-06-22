@@ -9,6 +9,7 @@ import Loading from "@/app/helper/Loading";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const page = () => {
   const [loading, setLoading] = useState(true);
@@ -25,9 +26,8 @@ const page = () => {
       if (response.data.success) {
         dispatch(setPropertyList(response.data.listing));
         setLoading(false);
-        console.log(response.data);
       } else {
-        console.log(response.data.message);
+        toast.error(response.data.message);
       }
     } catch (error) {
       console.log(error);

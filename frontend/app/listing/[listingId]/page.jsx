@@ -74,7 +74,7 @@ const page = () => {
         setListing(response.data.listing);
         setLoading(false);
       } else {
-        console.log(response.data.message);
+        toast.error(response.data.message);
       }
     } catch (error) {
       console.log(error);
