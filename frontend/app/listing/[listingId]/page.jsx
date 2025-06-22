@@ -134,14 +134,12 @@ const page = () => {
               </div>
             </div>
             <div className="flex items-center gap-x-3 py-6">
-              <Image
+              <img
                 src={`${
                   process.env.NEXT_PUBLIC_DATABASE_URL
                 }/${listing?.creator?.profileImagePath?.replace("public", "")}`}
                 alt="creatorImage"
-                width={45}
-                height={45}
-                className="rounded-full"
+                className="rounded-full w-[45px] h-[45px]"
               />
               <h5 className="text-[14px] font-medium capitalize">
                 Hosted by {listing?.creator?.firstname}{" "}
